@@ -1,5 +1,6 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import "./../styles/App.css";
+import Cities from "./Cities";
 
 // Do not alter the states const and values inside it.
 const states = [
@@ -155,7 +156,37 @@ const states = [
 ];
 
 function App() {
-  return <div id="main"></div>;
+  return (
+    <div id="main">
+      {states.map((ele, index) => {
+        {
+          const [style, setStyle] = useState({
+            display: "block",
+          });
+
+          const changeStyle = () => {
+            if (style.display === "block") {
+              setStyle({
+                display: "none",
+              });
+            } else {
+              setStyle({
+                display: "block",
+              });
+            }
+          };
+          return (
+            <>
+              <div key={index.toString()} id={`state${index+1}`} onClick={changeStyle}>
+                {ele.name}
+              </div>
+              <Cities style={style.display} cities={ele.cities} />
+            </>
+          );
+        }
+      })}
+    </div>
+  );
 }
 
 export default App;
