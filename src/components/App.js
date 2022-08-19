@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./../styles/App.css";
 import Cities from "./Cities";
+import Towns from "./Towns";
 
 // Do not alter the states const and values inside it.
 const states = [
@@ -181,6 +182,7 @@ function App() {
                 {ele.name}
               </div>
               <Cities style={style.display} cities={ele.cities} />
+              {/* <Towns style={style.display} /> */}
             </>
           );
         }

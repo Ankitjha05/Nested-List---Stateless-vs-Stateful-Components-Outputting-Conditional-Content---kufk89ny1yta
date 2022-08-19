@@ -25,8 +25,8 @@ export default function Cities(props) {
                 <>
                     <div key={ele.name} id={`city${index+1}`} onClick={changeStyle} style={{display:props.style,background:"lightgreen"}}>
                         {ele.name}
-                    </div>
                     <Towns style={style.display} town={ele.towns}/>
+                    </div>
                 </>
             )
         }

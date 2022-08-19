@@ -4,7 +4,7 @@ import React from 'react'
         <div>
             {props.town.map((ele,index)=>{
                 {return(
-                    <div id={`town${index}`} style={{display:props.style}}>
+                    <div id={`town${index}`} style={{display:props.style,background:'orange'}}>
                         {ele.name}
                     </div>
                 )}
